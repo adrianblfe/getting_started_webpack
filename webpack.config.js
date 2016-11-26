@@ -1,3 +1,5 @@
+var webpack = require("webpack");
+
 module.exports = {
   entry: './app/index.js',
   output: {
@@ -9,6 +11,7 @@ module.exports = {
     contentBase: "./app",
     inline: true
   },
+  devtool: 'eval-source-map',
   module: {
     loaders: [
       {
@@ -20,5 +23,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({ minimize: true })
+  ]
 };
