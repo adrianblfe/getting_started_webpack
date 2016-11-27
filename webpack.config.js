@@ -21,10 +21,16 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass',
+        exclude: /node_modules/
       }
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ minimize: true })
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new webpack.optimize.DedupePlugin()
   ]
 };

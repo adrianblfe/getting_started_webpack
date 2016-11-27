@@ -1,3 +1,3 @@
-var txt = "Esto se escribe en consola";
+var txt = "Hola mundo desde la consola!!!";
 
 exports.txt = txt;
